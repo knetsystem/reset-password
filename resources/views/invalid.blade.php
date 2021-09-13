@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 @section ('title')
-Selvbetjening - nulstil kodeord - BETA version
+Reset password
 @endsection
 
 
@@ -9,7 +9,7 @@ Selvbetjening - nulstil kodeord - BETA version
 
 <div id="app">
 	<p>
-		Siden er ikke længere gyldig. Enten er linket udløbet ellers er linket allerede blevet brugt. Linket virker kun en gang.
+		This page is no longer valid. Every link is valid only for one use and no longer than 24 hours.
 	</p>
 </div>
 

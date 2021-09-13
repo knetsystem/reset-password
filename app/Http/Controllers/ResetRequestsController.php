@@ -14,7 +14,7 @@ class ResetRequestsController extends Controller
     {
         $agent = new Agent();
         if ($agent->browser() == 'IE') {
-            echo 'Internet Explorer is not supported while in beta. Please use any other browser.';
+            echo 'Internet Explorer is not supported. Please use any other browser.';
             exit();
         }
         if ($agent->isRobot()) {
@@ -75,7 +75,6 @@ class ResetRequestsController extends Controller
         }
 
         $validated = $request->validate([
-            'username_reset' => 'nullable|in:normalize,email',
             'password'       => 'required|string|min:6|pwned|confirmed',
         ]);
 
@@ -85,13 +84,8 @@ class ResetRequestsController extends Controller
         // Initilize K-net API
         $knet = new Knet();
 
-        // Initilize username reset
-        $username_reset = '';
-
-        // Ignore username_reset. If $username_reset is '', then nothing is changed.
-
         // Patch user
-        $result = $knet->patchUser($user->url, $validated['password'], $username_reset);
+        $result = $knet->patchUser($user->url, $validated['password']);
 
         // Mark requested as used, to prevent duplicate changes with same token
         $pass->completed = true;

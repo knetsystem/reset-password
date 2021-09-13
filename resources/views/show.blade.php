@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 @section ('title')
-Selvbetjening - nulstil kodeord - BETA version
+Reset password
 @endsection
 
 
@@ -9,7 +9,7 @@ Selvbetjening - nulstil kodeord - BETA version
 
 <div id="app">
 	<reset-password userinfo="{{ json_encode($userinfo) }}" token="{{ $pass->pass }}"></reset-password>
-	<noscript>Siden virker ikke uden JavaScript</noscript>
+	<noscript>This page does not work without JavaScript</noscript>
 </div>
 
 <script src="/js/app.js"></script>

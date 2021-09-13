@@ -2,18 +2,18 @@
 	<div>
 		<div v-if="!consent">
 			<p>
-				Her kan du <b>nulstille det kodeord</b> du bruger til at gå på <b>kollegiets wifi, og på vores bookingsystem (book.pop.dk)</b>.
+				Use this page to <b>reset your K-Net password</b>.
 			</p>
 
 			<p>
-				Jeg bekræfter at jeg kun vil bruge denne selvbetjeningsportal til at nulstille mit eget kodeord, ydermere at
+				I confirm that I only will use this system to reset my own password. Furthermore that
 				<ul>
-					<li>Information om mit besøg vil blive gemt, herunder (men ikke begrænset til) information om min browser og min IP-addresse</li>
-					<li>Misbrug vil blive anmeldt og betragtes som grov overtrædelse af brugerklæringen. Har du opdaget et sikkerhedsproblem, så skriv til netværksudvalget, kontaktoplysninger er i højre side.</li>
+					<li>Information about my visit will be saved, including (but not limited to) information about my browser and my IP-address</li>
+					<li>Abuse will be reported and considered as a serious infringement of the the user declaration. If you have discoered a security problem then you must contact us <a href="https://k-net.dk/support">here</a>.</li>
 				</ul>
 
 				<center>
-					<button @click="consent = true" type="button" class="btn btn-primary">Accepter og fortsæt</button>
+					<button @click="consent = true" type="button" class="btn btn-primary">Accept and continue</button>
 				</center>
 			</p>
 		</div>
@@ -22,7 +22,7 @@
 			  <div class="form-group">
 			    <label for="Email">E-mail</label>
 			    <input type="email" @keydown="hasErrors = false" class="form-control" id="Email" v-model="email" aria-describedby="emailHelp" placeholder="E-mail" required :disabled="sendok || loading">
-			    <small id="emailHelp" class="form-text text-muted">Angiv din e-mail addresse.</small>
+			    <span id="emailHelp" class="help-block">Enter your email address.</span>
 			  </div>
 
 			  <vue-recaptcha
@@ -34,18 +34,18 @@
                 </vue-recaptcha>
 
 				<div class="alert alert-danger" v-if="hasErrors">
-					<strong>Fejl!</strong> Indtast en gyldig e-mailadresse.
+					<strong>Error!</strong> Please enter a valid email address.
 				</div>
 				<div class="alert alert-danger" v-if="sendok === false">
-					<strong>Fejl!</strong> Kan ikke sende dig en mail lige nu. Prøv igen senere.
+					<strong>Error!</strong> We cannot send you an email right now. Please try again later.
 				</div>
 			    <div class="alert alert-success" v-if="sendok">
-			    	<strong>Success!</strong> Vi har sendt dig en mail med yderligere instrukser.
+			    	<strong>Success!</strong> We have sent you an email with further instructions.
 			    </div>
 
 				<center v-if="sendok !== true">
-					<input type=submit v-if="loading" class="btn btn-secondary" disabled="" value="Vent venligst..">
-				    <input type=submit v-else :class="(hasErrors) ? 'btn btn-secondary' : 'btn btn-primary'" :disabled="hasErrors" value="Nulstil kodeord">
+					<input type=submit v-if="loading" class="btn btn-secondary" disabled="" value="Please wait..">
+				    <input type=submit v-else :class="(hasErrors) ? 'btn btn-secondary' : 'btn btn-primary'" :disabled="hasErrors" value="Reset password">
 				</center>
 			</form>
 		</div>

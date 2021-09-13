@@ -1,8 +1,8 @@
 <tr>
 <td class="header">
 <a href="{{ $url }}" style="display: inline-block;">
-@if (trim($slot) === 'P. O. Pedersen Kollegiet')
-<img src="https://self-service.pop.dk/pop.png" class="logo" alt="P. O. Pedersen Kollegiet Logo">
+@if (trim($slot) === 'K-Net')
+<img src="https://reset.k-net.dk/img/logo.png" class="logo" alt="K-Net Logo">
 @else
 {{ $slot }}
 @endif

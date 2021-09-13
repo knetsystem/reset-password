@@ -1,22 +1,24 @@
-@component('mail::message', ['preheader' => 'Vi har modtaget en anmodning om at nulstille din kode med denne e-mailadresse. ('.$user['email'].')'])
+@component('mail::message', ['preheader' => '
+We received a request to reset your password with this email address. ('.$user['email'].')'])
 
-# Hej
+# Hi,
 
-Vi har modtaget en anmodning om at nulstille koden til at tilgå din K-Net bruger hos {{config('app.name')}} med din e-mailadresse ({{ $user['email'] }}) fra en {{ $platform }} enhed med browseren {{ $browser }}. Vi kunne ikke finde en bruger med tilknytning til denne e-mailadresse.
 
-Hvis du er en beboer på {{config('app.name')}} og har forventet at modtage denne mail, så bør du overveje at anmode om en nulstilling af adgangskoden ved hjælp af den e-mail adresse, der er tilknyttet din bruger.
+We received a request to reset the password to access K-Net bruger hos {{config('app.name')}} with your email address ({{ $user['email'] }}) from a {{ $platform }} device using {{ $browser }}, but we were unable to find an account associated with this address.
+
+If you are a K-Net user and were expecting this email, consider trying to request a password reset using the email address associated with your account.
 
 @component('mail::button', ['url' => config('app.url')])
-Prøv med en anden e-mailadresse
+Try a different email
 @endcomponent
 
-Hvis du ikke er beboer på {{config('app.name')}} og ikke har anmodet om nulstilling af din adgangskode, så kan du blot se bort fra denne mail, eller [kontakte netgruppen]({{ config('app.url') }}), hvis du har spørgsmål.
+If you are not a K-Net user or did not request a password reset, please ignore this email or [contact support]({{ env('SUPPORT_URL') }}) if you have questions.
 
-Med venlig hilsen,<br>
-Netgruppen på {{ config('app.name') }}
+Thanks,<br>
+K-Net Association
 
 @component('mail::subcopy')
-Hvis du har problemer med knappen ovenfor, så kan du kopiere og indsætte web-adressen nedenfor i din browser:
+If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
 {{ config('app.url') }}
 @endcomponent

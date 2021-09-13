@@ -1,0 +1,31 @@
+body {
+	padding-top: 30px;
+}
+
+div.navbar a.brand {
+	position: relative;
+	margin: -30px 0 -20px -70px;
+	padding: 0;
+	width: 165px;
+	height: 85px;
+	background: url("/img/logo.png");
+	text-indent: -9999px;
+}
+
+div.navbar {
+	margin-bottom: 25px;
+	min-width: 210px;
+}
+
+@media (max-width: 979px) {
+	div.navbar a.brand {
+		float: none;
+		margin: -25px 0 -20px -50px;
+	}
+}
+
+@media (max-width: 480px) {
+	div.hero-unit {
+		padding: 10px;
+	}
+}

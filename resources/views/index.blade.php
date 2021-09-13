@@ -1,15 +1,16 @@
 @extends ('layouts.master')
 
 @section ('title')
-Selvbetjening - nulstil kodeord - BETA version
+Reset password
 @endsection
-
 
 @section ('content')
 
+<h1>Reset password</h1>
+
 <div id="app">
 	<reset-request sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></reset-request>
-	<noscript>Siden virker ikke uden JavaScript</noscript>
+	<noscript>This page does not work without JavaScript</noscript>
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>

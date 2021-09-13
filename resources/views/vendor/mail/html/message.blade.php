@@ -21,7 +21,7 @@
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-&copy; {{ date('Y') }}, Netgruppen på {{ config('app.name') }}.
+&copy; {{ date('Y') }}, K-Net Association, Anker Engelunds Vej 101A, 2800 Kgs. Lyngby, Denmark.
 @endcomponent
 @endslot
 @endcomponent

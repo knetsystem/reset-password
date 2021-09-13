@@ -105,7 +105,7 @@ class Knet extends Model
         }
     }
 
-    public function patchUser($url, $password = '', $username = '')
+    public function patchUser($url, $password = '')
     {
         // Check url format, exception if wrong
         if (!preg_match('/^https:\/\/api.k-net\.dk\/v2\/network\/user\/[0-9]{1,}\/$/', $url)) {
@@ -120,21 +120,11 @@ class Knet extends Model
             $data['password_setter'] = $password;
         }
 
-        // If username is set, then set username to input
-        if ($username != '' && $username) {
-            $data['username'] = $username;
-        }
-
         // Extract local part
         preg_match('/\/v2\/network\/user\/[0-9]{1,}\/$/', $url, $local);
 
         // Send patch request
         $o = $this->request($local[0], [], $data);
-
-        // Confirm username is patched if change was requested
-        if ($username != '' && $date['username'] != $o['username']) {
-            throw new \Exception('Error patching username in user data.');
-        }
 
         // Confirm password was changed
 

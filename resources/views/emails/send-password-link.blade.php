@@ -1,27 +1,27 @@
 @component('mail::message', [
-	'preheader' => 'Brug dette link til at nulstille dit kodeord. Linket er kun gyldigt i 24 timer.',
+	'preheader' => 'Use this link to reset your password. The link is only valid for 24 hours..',
 	'oneclickaction' => [
-		'body' => 'Nulstil kodeord',
+		'body' => 'Reset password',
 		'url' => $pass,
-		'description' => 'Brug knappen til at nulstille dit kodeord.',
+		'description' => 'Use the button to reset your password.',
 	],
 ])
 
-# Hej {{ $user['name'] }}
+# Hi,
 
-Du har for nyligt anmodet om at nulstille dit kodeord til din K-Net bruger hos {{config('app.name')}}. Brug knappen nedenfor til at nulstille dit det. **Denne mail er kun gyldig i 24 timer.**
+You recently requested to reset your password for your K-Net account. Use the button below to reset it. **This password reset is only valid for the next 24 hours.**
 
 @component('mail::button', ['url' => $pass])
-Nulstil dit kordord
+Reset your password
 @endcomponent
 
-Denne anmodning blev modtaget fra en {{ $platform }} enhed med browseren {{ $browser }}. Hvis du ikke har lavet denne anmodning, så kan du blot se bort fra denne mail, eller [kontakte netgruppen]({{ env('SUPPORT_URL') }}), hvis du har spørgsmål.
+For security, this request was received from a {{ $platform }} device using {{ $browser }}.  If you did not request a password reset, please ignore this email or [contact support]({{ env('SUPPORT_URL') }}) if you have questions.
 
-Med venlig hilsen,<br>
-Netgruppen på {{ config('app.name') }}
+Thanks,<br>
+K-Net Association
 
 @component('mail::subcopy')
-Hvis du har problemer med knappen ovenfor, så kan du kopiere og indsætte web-adressen nedenfor i din browser:
+If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
 {{$pass}}
 @endcomponent
