@@ -32,19 +32,26 @@
 
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
-                        <li class="home>"><a href="/"><i class="icon-home icon-white"></i>Home</a></li>
-                        <li class="dropdown about">
+                        <li class="home>"><a href="https://k-net.dk/"><i class="icon-home icon-white"></i>Home</a></li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li class="about">"><a href="/about">About K-Net</a></li>
-                                <li class="technicalsetup">"><a href="/technicalsetup">Technical setup</a></li>
-                                <li class="routingstats">"><a href="/routingstats">Routing stats</a></li>
-                                <li class="abuse">"><a href="/abuse">Abuse</a></li>
-                                <li class="volunteering">"><a href="/volunteering">Volunteering</a></li>
+                                <li class=""><a href="https://k-net.dk/about">About K-Net</a></li>
+                                <li class=""><a href="https://k-net.dk/technicalsetup">Technical setup</a></li>
+                                <li class=""><a href="https://k-net.dk/routingstats">Routing stats</a></li>
+                                <li class=""><a href="https://k-net.dk/abuse">Abuse</a></li>
+                                <li class=""><a href="https://k-net.dk/volunteering">Volunteering</a></li>
                             </ul>
                         </li>
                         <li class=""><a href="https://user.k-net.dk/"><i class="icon-user icon-white"></i>User settings</a></li>
-                        <li class="support"><a href="/support">Support</a></li>
+
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="https://reset.k-net.dk/">Reset password</a></li>
+                                <li class=""><a href="https://k-net.dk/support">Support</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 

@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            &copy; {{ date('Y') }}, K-Net Association, Anker Engelunds Vej 101A, 2800 Kgs. Lyngby, Denmark.
+            &copy; {{ date('Y') }}, K-Net Association, CVR: 30772652, Anker Engelunds Vej 101A, 2800 Kgs. Lyngby, Denmark.
         @endcomponent
     @endslot
 @endcomponent

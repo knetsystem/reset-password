@@ -1,5 +1,5 @@
 @component('mail::message', [
-	'preheader' => 'Use this link to reset your password. The link is only valid for 24 hours..',
+	'preheader' => 'Use this link to reset your password. The link is only valid for 24 hours.',
 	'oneclickaction' => [
 		'body' => 'Reset password',
 		'url' => $pass,

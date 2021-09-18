@@ -29,13 +29,13 @@ class EmailNotFound extends Mailable
         if ($this->agent->platform() != '') {
             $this->platform = $this->agent->platform();
         } else {
-            $this->platform = 'Ukendt';
+            $this->platform = 'Unknown';
         }
 
         if ($this->agent->browser() != '') {
             $this->browser = $this->agent->browser();
         } else {
-            $this->browser = 'Ukendt';
+            $this->browser = 'Unknown';
         }
     }
 
@@ -47,6 +47,6 @@ class EmailNotFound extends Mailable
     public function build()
     {
         return $this->markdown('emails.email-not-found')
-                    ->subject('Nulstil kodeord til '.config('app.name'));
+                    ->subject('Reset K-Net password');
     }
 }

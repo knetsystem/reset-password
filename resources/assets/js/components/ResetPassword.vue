@@ -3,14 +3,12 @@
         <form @submit.prevent="sendResetRequest">
 
             <div class="form-group">
-                <label for="Password">New password</label>
-                <input type="password" @keydown="hasErrors = false" :disabled="sendok || loading" required class="form-control" id="Password" v-model="password" aria-describedby="passwordHelp" placeholder="Nyt kodeord">
-                <small id="passwordHelp" class="form-text text-muted">Enter your new password.</small>
+                <label for="Password">Enter your new password</label>
+                <input type="password" @keydown="hasErrors = false" :disabled="sendok || loading" required class="form-control" id="Password" v-model="password" aria-describedby="passwordHelp" placeholder="Enter your new password">
             </div>
             <div class="form-group">
-                <label for="PasswordConfirmed">Gentag nyt kodeord</label>
-                <input type="password" @keydown="hasErrors = false" :disabled="sendok || loading" required class="form-control" id="PasswordConfirmed" v-model="password_confirmation" aria-describedby="passwordConfirmedHelp" placeholder="Gentag nyt kodeord">
-                <small id="passwordConfirmedHelp" class="form-text text-muted">Repeat your new password.</small>
+                <label for="PasswordConfirmed">Repeat your new password</label>
+                <input type="password" @keydown="hasErrors = false" :disabled="sendok || loading" required class="form-control" id="PasswordConfirmed" v-model="password_confirmation" aria-describedby="passwordConfirmedHelp" placeholder="Repeat your new password">
             </div>
 
             <div class="alert alert-danger" v-if="pwned">
@@ -26,9 +24,9 @@
                 <strong>Success!</strong> {{ submitText }} is completed .
             </div>
 
-            <center v-if="sendok !== true">
+            <div class="form-group" v-if="sendok !== true">
                 <input type=submit :class="(hasErrors || loading) ? 'btn btn-secondary' : 'btn btn-primary'" :disabled="hasErrors || loading" v-model="submitText">
-            </center>
+            </div>
         </form>
     </div>
 </template>

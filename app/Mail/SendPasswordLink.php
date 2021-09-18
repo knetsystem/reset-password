@@ -30,13 +30,13 @@ class SendPasswordLink extends Mailable
         if ($this->agent->platform() != '') {
             $this->platform = $this->agent->platform();
         } else {
-            $this->platform = 'Ukendt';
+            $this->platform = 'Unknown';
         }
 
         if ($this->agent->browser() != '') {
             $this->browser = $this->agent->browser();
         } else {
-            $this->browser = 'Ukendt';
+            $this->browser = 'Unknown';
         }
 
         $this->pass = $pass;
@@ -50,6 +50,6 @@ class SendPasswordLink extends Mailable
     public function build()
     {
         return $this->markdown('emails.send-password-link')
-                    ->subject('Nulstil kodeord til '.config('app.name'));
+                    ->subject('Reset K-Net password');
     }
 }

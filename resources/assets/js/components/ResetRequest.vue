@@ -9,20 +9,19 @@
 				I confirm that I only will use this system to reset my own password. Furthermore that
 				<ul>
 					<li>Information about my visit will be saved, including (but not limited to) information about my browser and my IP-address</li>
-					<li>Abuse will be reported and considered as a serious infringement of the the user declaration. If you have discoered a security problem then you must contact us <a href="https://k-net.dk/support">here</a>.</li>
+					<li>Abuse will be reported and considered as a serious infringement of the the user declaration. If you have discovered a security problem then you must contact us <a href="https://k-net.dk/support">here</a>.</li>
 				</ul>
 
-				<center>
+				<div class="form-group">
 					<button @click="consent = true" type="button" class="btn btn-primary">Accept and continue</button>
-				</center>
+				</div>
 			</p>
 		</div>
 		<div v-if="consent">
 			<form @submit.prevent="sendResetRequest">
 			  <div class="form-group">
-			    <label for="Email">E-mail</label>
+			    <label for="Email">Enter your email address</label>
 			    <input type="email" @keydown="hasErrors = false" class="form-control" id="Email" v-model="email" aria-describedby="emailHelp" placeholder="E-mail" required :disabled="sendok || loading">
-			    <span id="emailHelp" class="help-block">Enter your email address.</span>
 			  </div>
 
 			  <vue-recaptcha
@@ -43,10 +42,10 @@
 			    	<strong>Success!</strong> We have sent you an email with further instructions.
 			    </div>
 
-				<center v-if="sendok !== true">
+				<div class="form-group" v-if="sendok !== true">
 					<input type=submit v-if="loading" class="btn btn-secondary" disabled="" value="Please wait..">
 				    <input type=submit v-else :class="(hasErrors) ? 'btn btn-secondary' : 'btn btn-primary'" :disabled="hasErrors" value="Reset password">
-				</center>
+				</div>
 			</form>
 		</div>
 	</div>
