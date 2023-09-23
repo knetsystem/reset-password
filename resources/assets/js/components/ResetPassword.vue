@@ -12,7 +12,7 @@
             </div>
 
             <div class="alert alert-danger" v-if="pwned">
-                <strong>Error!</strong> The password is not secure enough. Read more <a href="https://haveibeenpwned.com/Passwords">here</a>.
+                <strong>Error!</strong> The password you have chosen has been leaked and can be found in publicly available password databases. You must choose another password. Read more <a href="https://haveibeenpwned.com/Passwords">here</a>.
             </div>
             <div class="alert alert-danger" v-if="hasErrors">
                 <strong>Error!</strong> The password must not be empty, must be at least 6 characters long and must be written the same twice.
